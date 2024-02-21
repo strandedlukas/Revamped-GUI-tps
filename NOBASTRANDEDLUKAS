@@ -1,6 +1,6 @@
 local whitelist = {
     ["SIPAPIBACKUPALTEZ"] = true,
-    ["Zikel100"] = true,
+    ["Player2Name"] = true,
     -- Add more player names as needed
 }
 
@@ -61,9 +61,9 @@ local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/daw
 
 local win = DiscordLib:Window("NOBA Script Library | made by lukas")
 
-local serv = win:Server("Library", "")
+local serv = win:Server("⚽️", "")
 
-local btns = serv:Channel("Buttons")
+local btns = serv:Channel("⚽️ Library (reaches) ⚽️")
 
 btns:Button("Noba classic reach by lukas | normal script", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/strandedlukas/Tpsguiscript/main/Tps%20gui"))();
