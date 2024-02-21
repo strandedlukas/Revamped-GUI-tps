@@ -4,21 +4,11 @@ local whitelist = {
     -- Add more player names as needed
 }
 
--- Function to check and kick non-whitelisted players
-local function checkAndKick(player)
+game.Players.PlayerAdded:Connect(function(player)
     if not whitelist[player.Name] then
         player:Kick("You are not whitelisted, contact us to get whitelisted.")
     end
-end
-
--- Check and kick non-whitelisted players when a new player joins
-game.Players.PlayerAdded:Connect(checkAndKick)
-
--- Check and kick all players who are already in the game
-for _, player in ipairs(game.Players:GetPlayers()) do
-    checkAndKick(player)
-end
-
+end)
 
 -- this script was made by lukas
 local screenGui = Instance.new("ScreenGui")
@@ -44,7 +34,7 @@ game.StarterGui:SetCore("SendNotification", {
     Title = "Whitelisted",
     Text = "Join the discord lil boy",
     Icon = "",
-    Duration = 10,
+    Duration = 7,
     Button1 = "Yes",
     Button2 = "Yes",
     Callback = function()
@@ -53,7 +43,7 @@ game.StarterGui:SetCore("SendNotification", {
 })
 
 -- Hide notification after 10 seconds
-wait(10)
+wait(7)
 game.StarterGui:SetCore("SendNotification", {
     Title = "",
     Text = "",
@@ -66,20 +56,19 @@ game.StarterGui:SetCore("SendNotification", {
     end
 })
 
+
 local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
 
 local win = DiscordLib:Window("NOBA Script Library | made by lukas")
 
-local serv = win:Server("Preview", "")
+local serv = win:Server("Library", "")
 
 local btns = serv:Channel("Buttons")
 
 btns:Button("Noba classic reach by lukas | normal script", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/strandedlukas/Tpsguinewest/main/TPSGUI"))();
+loadstring(game:HttpGet("https://raw.githubusercontent.com/strandedlukas/Tpsguiscript/main/Tps%20gui"))();
 DiscordLib:Notification("Notification", "Enjoy", "Okay!")
 end)
-
-btns:Seperator()
 
 btns:Button("Noba unleaked free script", function()
   loadstring(game:HttpGet("https://raw.githubusercontent.com/dvd77700000/Free/main/FreeScript"))()
