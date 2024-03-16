@@ -2,7 +2,7 @@ local player = game.Players.LocalPlayer
 
 if player.Name == "luvxher7" then
     print("Whitelist")
-    elseif player.Name == "Username" then
+    elseif player.Name == "Nicoprobre" then
     print("Whitelisted")
     elseif player.Name == "userNAME" then
     print("Whitelisted")
