@@ -1,0 +1,85 @@
+local whitelist = {
+    ["SIPAPIBACKUPALTEZ"] = true,
+    ["Player2Name"] = true,
+    -- Add more player names as needed
+}
+
+game.Players.PlayerAdded:Connect(function(player)
+    if not whitelist[player.Name] then
+        player:Kick("You are not whitelisted, contact us to get whitelisted.")
+    end
+end)
+
+-- this script was made by lukas
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+-- Create TextLabel for message
+local messageLabel = Instance.new("TextLabel")
+messageLabel.Text = "Checking for whitelist, please wait as the loader loads.."
+messageLabel.Size = UDim2.new(0, 300, 0, 50)
+messageLabel.Position = UDim2.new(0.5, -150, 0.5, -25)
+messageLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+messageLabel.Parent = screenGui
+
+-- Simulate loading process
+wait(3) -- Placeholder for loading process
+
+-- Hide ScreenGui after 5 seconds
+wait(5)
+screenGui:Destroy()
+
+-- Once loading is complete, show notification
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Whitelisted",
+    Text = "Join the discord lil boy",
+    Icon = "",
+    Duration = 7,
+    Button1 = "Yes",
+    Button2 = "Yes",
+    Callback = function()
+        -- Add your code here for what happens when the user clicks on the notification
+    end
+})
+
+-- Hide notification after 10 seconds
+wait(7)
+game.StarterGui:SetCore("SendNotification", {
+    Title = "",
+    Text = "",
+    Icon = "",
+    Duration = 0,
+    Button1 = "",
+    Button2 = "",
+    Callback = function()
+        -- Add your code here for any cleanup or additional actions
+    end
+})
+
+
+local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
+
+local win = DiscordLib:Window("NOBA Script Library | made by lukas")
+
+local serv = win:Server("⚽️", "")
+
+local btns = serv:Channel("⚽️ Library (reaches) ⚽️")
+
+btns:Button("Noba classic reach by lukas | normal script", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/strandedlukas/Tpsguiscript/main/Tps%20gui"))();
+DiscordLib:Notification("Notification", "Enjoy", "Okay!")
+end)
+
+btns:Button("Noba unleaked free script", function()
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/dvd77700000/Free/main/FreeScript"))()
+DiscordLib:Notification("Notification", "Noba unleaked executed", "Okay!")
+end)
+
+btns:Button("Fps booster by strandedlukas", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/strandedlukas/Fps-booster-/main/Fps%20booster"))();
+DiscordLib:Notification("Notification", "inf jump", "Okay!")
+end)
+
+serv:Channel("by .strandedlukas #0001")
+
+win:Server("Main", "http://www.roblox.com/asset/?id=6031075938")
